@@ -39,7 +39,7 @@ class ProxmoxWakeOnLan:
 	for file in os.listdir(confpath):
 	    filepath = confpath + file
 	    for line in open(filepath):
-                if macaddress in line:
+                if macaddress.upper() in line.upper():
 		    return os.path.splitext(os.path.basename(file))[0]
         return False
 
